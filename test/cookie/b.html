@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var Cache = Cache || {};
+    Cache.init = false;
+    Cache.data = {};
+
+    Cache._init = function(){
+        Cache.init = true;
+        var tempData = null;
+        try
+        {
+            tempData = document.cookie;
+            tempData = unescape(tempData);
+            tempData = JSON.parse(tempData);
+        }
+        catch(e)
+        {
+            tempData = null;
+        }
+
+        if(tempData)
+        {
+            Cache.data = tempData;
+        }
+    }
+
+    Cache.set = function(key, value){
+        if(false == Cache.init)
+        {
+            Cache._init();
+        }
+
+        Cache.data[key] = value;
+
+        //立刻存储数据
+        var json = JSON.stringify(Cache.data);
+        json = escape(json);
+        document.cookie = json;
+    }
+
+    Cache.get = function(key){
+        if(false == Cache.init)
+        {
+            Cache._init();
+        }
+
+        return Cache.data[key];
+    }
+
+    var str = Cache.get('str');
+    var obj = Cache.get('obj');
+    var arr = Cache.get('arr');
+</script>
+</html>

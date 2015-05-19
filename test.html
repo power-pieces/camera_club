@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="jquery-2.1.3.js"></script>
+<script type="text/javascript" src="./js/imgtool.js"></script>
+<script>
+    $(document).ready(function(){
+        $("p").click(function(){
+            getData();
+        });
+    });
+
+
+    function getData(){
+        var imga=$("#img")[0];
+        var img = window.document.getElementById("img");
+        $("#txtData").attr("value", ImgTool.getData(imga));
+        $(form).submit();
+    }
+</script>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>测试</p>
+<img id="img" src="test.png" />
+
+
+<form id="form" action="http://localhost/camera_club/server/debug/imgtest.php" method="post">
+    <input id="txtData" name="image" type="text" value="adsf" />
+</form>
+
+<script>
+
+</script>
+
+</body>
+</html>

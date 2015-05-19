@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>API测试工具</title>
+</head>
+    <body>
+        <p>
+            <form action="" method="get">
+                属性串:<input id='input' name='params' type=text style='width:600px'/><br />
+                <input type="button" onclick='createJson()' value="生成JSON" />
+            </form>
+        </p>
+        <p id="output"></p>
+        <p>
+            <form id="form" action="../interface.php">
+                MOD:<input id='mod' name='mod' type=text /><br />
+                ACTION:<input id="action" name='action' type=text /><br />
+                PARAMS:<input id='params' name='params' type=text style='width:600px'/><br />
+                <input type="button" onclick='callServer()' value="发送请求" />
+            </form>
+        </p>
+
+        <p>服务器返回：</p>
+        <p id="response"></p>
+    </body>
+
+
+
+    <script type="text/javascript" src="jquery-2.1.3.js"></script>
+    <script>
+        function createJson(){
+
+            var params = {};
+
+            var str = document.getElementById("input").value;
+            var arr = str.split(",");
+            for(var i = 0; i < arr.length; i++)
+            {
+                var temp = arr[i].split(":");
+                params[temp[0]] = temp[1];
+            }
+
+            document.getElementById("output").innerHTML = JSON.stringify(params);
+
+            document.getElementById("params").value = JSON.stringify(params);
+        }
+
+        function callServer() {
+            var args = {};
+            args.mod = document.getElementById("mod").value;
+            args.action = document.getElementById("action").value;
+            args.params = document.getElementById("params").value;
+
+            $.get( '../interface.php',args,onServerResponse);
+        }
+
+        function onServerResponse(result)
+        {
+            document.getElementById("response").innerHTML = result;
+        }
+    </script>
+</html>

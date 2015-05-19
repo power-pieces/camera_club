@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="b.html">
+    <input type="submit" value="submit" />
+</form>
+
+</body>
+<script>
+    var Cache = Cache || {};
+    Cache.init = false;
+    Cache.data = {};
+
+    Cache._init = function(){
+        Cache.init = true;
+        var tempData = null;
+        try
+        {
+            tempData = document.cookie;
+            tempData = unescape(tempData);
+            tempData = JSON.parse(tempData);
+        }
+        catch(e)
+        {
+            tempData = null;
+        }
+
+        if(tempData)
+        {
+            Cache.data = tempData;
+        }
+    }
+
+    Cache.set = function(key, value){
+        if(false == Cache.init)
+        {
+            Cache._init();
+        }
+
+        Cache.data[key] = value;
+
+        //立刻存储数据
+        var json = JSON.stringify(Cache.data);
+        json = escape(json);
+        document.cookie = json;
+    }
+
+    Cache.get = function(key){
+        if(false == Cache.init)
+        {
+            Cache._init();
+        }
+
+        return Cache.data[key];
+    }
+
+
+    var obj = {};
+    obj.x = 1;
+    obj.y = 2;
+
+    var array = [1,2,3,4,5,6,7,8,9,0];
+
+    Cache.set('str','中国');
+    Cache.set('obj',obj);
+    Cache.set('arr',array);
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>个人主页</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/web.css" />
+</head>
+<body onload="UserHomepage.init()">
+	<!--头部-->
+	<header id="header" class="homepage-head">
+		<!--用户头像-->
+		<img class="user-headimg" />
+		<!--用户信息-->
+		<div class="user-info">
+			<h4 class="user-name"><span></span><em></em></h4>
+            <div class="user-ship"></div>
+            <!--
+			<div class="user-ship"><a href="javascript:;" class="user-follow">33关注</a><span  href="javascript:;" class="user-fans">33粉丝</span></a></div>
+			-->
+		</div>
+		<!--右侧小图标
+		<a href="#" class="icon-plus"></a>
+		<a href="#" class="icon-mall"></a>-->
+        <!--返回-->
+        <div class="back-btns homepage-back">
+            <a href="#" onclick="Common.goHome()" class="btn">首页</a>
+            <a href="#" onclick="Common.goBack()" class="btn">返回</a>
+        </div>
+	</header>
+	<!--头部结束-->
+	
+	<!--内容区-->
+	<div class="main" id="wrapper">
+		<div class="scroller">
+			<!--图文列表-->
+
+            <div id="pullDown" class="ub ub-pc c-gra">
+                <div class="pullDownIcon"></div>
+                <div class="pullDownLabel">下拉刷新</div>
+            </div>
+
+			<div class="photo-list">
+				<ul id="img_list">
+				</ul>
+			</div>
+
+            <div id="pullUp" class="ub ub-pc c-gra">
+                <div class="pullUpIcon"></div>
+                <div class="pullUpLabel">上拉显示更多...</div>
+            </div>
+
+		</div>
+	</div>
+	<!--内容区结束-->
+</body>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script> 
+	<script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/user_homepage.js"></script>
+</html>

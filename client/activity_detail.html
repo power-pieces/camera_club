@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>活动详情</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/web.css" />
+</head>
+<body onload="ActivityDetail.init()" class="no-bottom">
+	<div class="main" id="wrapper">
+		<div class="scroller">
+			<!--大图-->
+			<div class="photo"><img id="img" src="images/img.jpg" /></div>
+			<!--按钮-->
+			<div class="form-btns">
+				<a href="add_photo.php">马上投稿</a>
+				<a href="javascript:;" onclick="ActivityDetail.searchType()">去看看</a>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script> 
+	<script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/activity_detail.js"></script>
+</html>

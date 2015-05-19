@@ -1,0 +1,1 @@
+a:3:{s:5:"token";s:107:"K-805PiSet3hT2GgaoYZfe7NCLiqnHeCkURCoum9gWqUouLUtbTtEBDPG4c2v_6uaoM1lHGJIjYxnXiZPN6LZKraLb5zJgu7XbskikIDGHE";s:6:"ticket";s:86:"sM4AOVdWfPE4DxkXGEs8VICqcIasjdg6kKX39k5Ce2zls-SAgxXz_FoIXtyWGNb_y0aosdNOcKY4KMc6tIvizQ";s:4:"time";i:1431079642;}

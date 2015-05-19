@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>查看他人照片</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/web.css" />
+</head>
+<body onload="init()">
+	<!--头部-->
+	<header id="header">
+		<!--用户头像-->
+		<img id="headimg" class="user-headimg" />
+		<!--用户信息-->
+		<div class="user-info">
+			<h4 class="user-name"></h4>
+			<p class="upload-date"></p>
+		</div>
+		<!--右侧小图标
+		<a href="#" class="icon-plus"></a>-->
+		<!--返回-->
+		<div class="back-btns">
+			<a href="#" onclick="Common.goHome()" class="btn">首页</a>
+			<a href="#" onclick="Common.goBack()" class="btn">返回</a>
+		</div>
+	</header>
+	<!--头部结束-->
+	
+	<!--内容区-->
+	<div class="main" id="wrapper">
+		<div class="scroller">
+			<!--标题-->
+            <div class="user-info photo-title">
+                <h4 id="title" class="upload-date"></h4>
+                <p id="desc" class="upload-date"></p>
+            </div>
+			<!--图片-->
+			<div class="photo view-photo"><img id="photo" /></div>
+			<!--相关信息-->
+			<div class="relative-info">
+				<a href="#" class="like">9</a>
+				<a href="#" class="view">18</a>
+				<!--<a href="#" class="share">分享</a>-->
+			</div>
+			<!--谁看过ta-->
+			<div class="mod-wrap friendship">
+				<h2>谁看过ta</h2>
+				<ul  id="visitor_list">
+				</ul>
+			</div>
+			<!--评论-->
+			<div class="mod-wrap comments">
+				<h2>评论</h2>
+                <div id="comment_list" class="comment-content">
+
+                </div>
+                <div class="reply-form">
+                    <textarea id="comment_content" placeholder="说点什么吧"></textarea>
+                    <a href="javascript:;" onclick="ViewPhoto.onSubmitClick()" class="btn reply-publish">发布</a>
+                </div>
+                <!--
+				<div class="comment-content">
+					<div class="comment-username"><span>赵兜兜</span></div>
+					<p class="comment-text">
+						亲爱的设计师们，你们心中的小飞鹤是什么样子？我们很期待见到你们描绘它！
+					</p>
+					<div class="reply-btn">
+						<a href="javascript:;" class="btn">回复</a>
+					</div>
+					回复
+					<div class="reply-form">
+						<textarea placeholder="说点什么吧"></textarea>
+						<a href="javascript:;" class="btn reply-publish">发布</a>
+					</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<!--内容区结束-->
+</body>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script> 
+	<script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/view_photo.js"></script>
+    <script>
+        function init()
+        {
+            try {
+                ViewPhoto.init();
+            }
+            catch(e)
+            {
+                document.body.innerHTML = e;
+            }
+
+        }
+
+    </script>
+</html>

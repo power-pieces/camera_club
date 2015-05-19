@@ -1,0 +1,16 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,div,a{margin:0;padding:0;}
+body{width:100%;background:#fff;-webkit-overflow-scrolling:touch;-webkit-user-select:none;-webkit-text-size-adjust:none;overflow:hidden;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+address,cite,dfn,em,var{font-style:normal;}
+ul,ol{list-style:none;}
+a{text-decoration:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#000;}
+a:link, a:visited{color:#000;}
+fieldset,img{border:0 none;}
+img{max-width:100%;vertical-align:top;}
+button,input,select,textarea{font-size:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input:focus, textarea:focus{outline:0 none;}
+table{border-collapse:collapse;border-spacing:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{display:block;margin:0;padding:0;}
+
+
